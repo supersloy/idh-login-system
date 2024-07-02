@@ -11,7 +11,7 @@ export function AuthPage() {
       <Flex vertical justify="center">
         <Card className={styles.Card}>
           <Flex vertical gap="small">
-            <h1 className={styles.Title}>Inno Data Hub</h1>
+            <h1 className={styles.Title}>InnoDataHub</h1>
             <Button
               onClick={() => keycloak.login()}
               className={styles.LoginButton}

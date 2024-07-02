@@ -5,7 +5,7 @@ import classes from "./ProjectCard.module.css";
 type ProjectInfo = {
   name: string;
   description: string;
-  link?: string;
+  link: string;
 };
 
 export function ProjectCard(project: ProjectInfo) {
