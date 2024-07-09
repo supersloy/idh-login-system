@@ -20,7 +20,7 @@ VITE_TASK_CHECKER_LINK=http://link6
 3) Start the application locally or via Dockerfile
     * To start locally:
         * Install required node modules via `npm install`
-        * Start and deploy application via `npm run start`
+        * Start and deploy application via `npm run dev`
     * To start via Dockerfile
         * Build docker image via `docker build -t booking-frontend .`
         * Start the container `docker run booking-frontend`
