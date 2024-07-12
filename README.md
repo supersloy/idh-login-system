@@ -49,3 +49,7 @@ Skip steps 1-2 and follow only steps 4 and 5 of `Development version` instructio
 This will create `dist` folder containing `html` file as user entry point and other files that are imported by the `html` file.
 
 ! The version (production or development) of the resulted build depends on `.env` or `.env.local` file. Read section `Setting up production version variables` for more info.
+
+### How to add or edit project names and descriptions
+
+There are folders in `public/locales/`. Each folder contains `translation.json` file. The file includes project information in `projects` field. Change it to edit content on projects page.

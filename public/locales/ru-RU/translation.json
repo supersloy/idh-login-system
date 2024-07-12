@@ -1,0 +1,35 @@
+{
+  "login": "Войти",
+  "register": "Зарегистрироваться",
+  "logout": "Выйти",
+  "english": "Английский (English)",
+  "russian": "Русский",
+  "signAs": "Текущий пользователь: ",
+  "goToProject": "Перейти к проекту",
+  "projects": {
+    "datasets": {
+      "title": "InnoDataHub Datasets",
+      "description": "Поиск датасетов стал проще, как никогда раньше! Публикуйте, обсуждайте, ищите и находите данные для ваших задач в InnoDataHub Datasets, а Искусственный Интеллект будет рад вам помочь."
+    },
+    "competition": {
+      "title": "InnoDataHub.Соревнования",
+      "description": ""
+    },
+    "GPTeacher": {
+      "title": "GPTитор",
+      "description": ""
+    },
+    "treeTasks": {
+      "title": "Древовидная система практических заданий по базе знаний курса",
+      "description": ""
+    },
+    "taskGenerator": {
+      "title": "Система генерации задач к экзамену",
+      "description": ""
+    },
+    "taskChecker": {
+      "title": "Система проверки решений задач по математике",
+      "description": ""
+    }
+  }
+}

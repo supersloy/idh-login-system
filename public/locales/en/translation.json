@@ -1,0 +1,35 @@
+{
+  "login": "Login",
+  "register": "Register",
+  "logout": "Logout",
+  "english": "English",
+  "russian": "Russian (Русский)",
+  "signAs": "Currently signed in as: ",
+  "goToProject": "Go to project",
+  "projects": {
+    "datasets": {
+      "title": "InnoDataHub Datasets",
+      "description": "Searching for datasets has become easier than ever before! Publish, discuss, search and find data for your tasks in InnoDataHub Datasets, and Artificial Intelligence will be happy to help you."
+    },
+    "competition": {
+      "title": "InnoDataHub.Competitions",
+      "description": ""
+    },
+    "GPTeacher": {
+      "title": "GPTeacher",
+      "description": ""
+    },
+    "treeTasks": {
+      "title": "Tree-like system of practical tasks based on the course knowledge base",
+      "description": ""
+    },
+    "taskGenerator": {
+      "title": "Exam problem generation system",
+      "description": ""
+    },
+    "taskChecker": {
+      "title": "System for checking solutions to problems in mathematics",
+      "description": ""
+    }
+  }
+}

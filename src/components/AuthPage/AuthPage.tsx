@@ -2,9 +2,12 @@ import { Flex, Card, Button } from "antd";
 import { useContext } from "react";
 import { KeyCloakContext } from "../KeyCloakProvider/KeyCloakProvider";
 import styles from "./AuthPage.module.css";
+import { useTranslation } from "react-i18next";
+import { LanguageRadio } from "../LanguageRadio/LanguageRadion";
 
 export function AuthPage() {
   const keycloak = useContext(KeyCloakContext);
+  const { t } = useTranslation();
 
   return (
     <Flex justify="center" className={styles.PageContainer}>
@@ -16,14 +19,15 @@ export function AuthPage() {
               onClick={() => keycloak.login()}
               className={styles.LoginButton}
             >
-              Login
+              {t("login")}
             </Button>
             <Button
               onClick={() => keycloak.register()}
               className={styles.LoginButton}
             >
-              Register
+              {t("register")}
             </Button>
+            <LanguageRadio size="large" />
           </Flex>
         </Card>
       </Flex>

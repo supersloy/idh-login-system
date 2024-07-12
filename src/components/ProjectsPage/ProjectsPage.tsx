@@ -7,6 +7,8 @@ const { Text } = Typography;
 
 import styles from "./ProjectsPage.module.css";
 import { projects } from "./projects";
+import { LanguageRadio } from "../LanguageRadio/LanguageRadion";
+import { useTranslation } from "react-i18next";
 
 type UserInfo = {
   email: string;
@@ -23,6 +25,7 @@ export function ProjectsPage() {
   const [userInfo, setUserInfo] = useState<UserInfo | undefined>(
     keycloak.userInfo as undefined
   );
+  const { t } = useTranslation();
 
   useEffect(() => {
     keycloak
@@ -30,15 +33,20 @@ export function ProjectsPage() {
       .then(() => setUserInfo(keycloak.userInfo as UserInfo));
   }, [keycloak]);
 
-  console.log(userInfo);
   return (
     <Flex vertical align="center" gap="small" style={{ minWidth: "437px" }}>
-      {/* <Card style={{ width: "50vw", marginTop: "20px" }}> */}
       <h1 className={styles.Title}>InnoDataHub</h1>
+      <div style={{ width: "350px" }}>
+        <LanguageRadio />
+      </div>
       <Flex gap="middle" align="center">
-        <Text strong>Currently signed in as: {userInfo?.email}</Text>
-        <Button onClick={() => keycloak.logout()}>Logout</Button>
+        <Text strong>
+          {t("signAs")}
+          {userInfo?.email}
+        </Text>
+        <Button onClick={() => keycloak.logout()}>{t("logout")}</Button>
       </Flex>
+
       <Flex
         gap="middle"
         wrap
