@@ -9,27 +9,27 @@
   "projects": {
     "datasets": {
       "title": "InnoDataHub Datasets",
-      "description": "Searching for datasets has become easier than ever before! Publish, discuss, search and find data for your tasks in InnoDataHub Datasets, and Artificial Intelligence will be happy to help you."
+      "description": "Finding datasets is easier than ever before! Publish, discuss, search and find data for your tasks in InnoDataHub Datasets and Artificial Intelligence will be happy to help you."
     },
     "competition": {
       "title": "InnoDataHub.Competitions",
-      "description": ""
+      "description": "InnoDataHub.Competitions is a platform for machine learning and data analytics competitions. Train models, share observations, create and grow together with InnoDataHub.Competitions."
     },
     "GPTeacher": {
       "title": "GPTeacher",
-      "description": ""
+      "description": "GRTeacher is an interactive platform for creating perfect queries for language models.  Learn and get instant improvement recommendations from artificial intelligence. Solve the suggested tasks, track your progress and achieve better results with each new query!"
     },
     "treeTasks": {
-      "title": "Tree-like system of practical tasks based on the course knowledge base",
-      "description": ""
+      "title": "Graphit",
+      "description": "Graphit is a platform for automatic creation of AI-assisted training courses based on training materials. By uploading any material, you will get a structured theory with practical tasks to master it!"
     },
     "taskGenerator": {
-      "title": "Exam problem generation system",
-      "description": ""
+      "title": "QuestGen",
+      "description": "QuestGen is an innovative web-based platform for generating learning assignments. The platform allows users to easily create questions on a given topic based on sample assignments. Prepare materials faster and easier with QuestGen."
     },
     "taskChecker": {
-      "title": "System for checking solutions to problems in mathematics",
-      "description": ""
+      "title": "MathHelper",
+      "description": "MathHelper is a platform to get feedback on solving math problems. Upload your problems, solve available problems, get feedback and pump up your knowledge together with the math AI assistant. "
     }
   }
 }

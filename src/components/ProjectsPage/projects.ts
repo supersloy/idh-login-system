@@ -9,18 +9,18 @@ export const projects = [
   },
   {
     name: "GPTeacher",
-    link: import.meta.env.VITE_GPT_TEACHER_LINK,
+    link: import.meta.env.VITE_GPTEACHER_LINK,
   },
   {
     name: "treeTasks",
-    link: import.meta.env.VITE_TREE_TASKS_LINK,
+    link: import.meta.env.VITE_GRAPHIT_LINK,
   },
   {
     name: "taskGenerator",
-    link: import.meta.env.VITE_TASK_GENERATOR_LINK,
+    link: import.meta.env.VITE_QUEST_GEN_LINK,
   },
   {
     name: "taskChecker",
-    link: import.meta.env.VITE_TASK_CHECKER_LINK,
+    link: import.meta.env.VITE_MATH_HELPER_LINK,
   },
 ];
