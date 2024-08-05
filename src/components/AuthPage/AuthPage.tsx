@@ -5,6 +5,10 @@ import styles from "./AuthPage.module.css";
 import { useTranslation } from "react-i18next";
 import { LanguageRadio } from "../LanguageRadio/LanguageRadion";
 
+// ------------------ //
+// Not currently used //
+// ------------------ //
+
 export function AuthPage() {
   const keycloak = useContext(KeyCloakContext);
   const { t } = useTranslation();

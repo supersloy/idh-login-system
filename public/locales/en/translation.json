@@ -5,23 +5,38 @@
   "english": "English",
   "russian": "Russian (Русский)",
   "signAs": "Currently signed in as: ",
-  "goToProject": "Go to project",
+  "goToProject": "Visit",
+  "propoganda": "discover the future in a new way",
+  "requireAuth": {
+    "return": "Return",
+    "text": "Please, login before proceeding to the project"
+  },
+  "header": {
+    "Portal": "Portal",
+    "Assessment": "Assessment",
+    "Courses": "Courses",
+    "Programs": "BPEP",
+    "Software": "Software",
+    "Analytics": "Analytics",
+    "LMS": "LMS",
+    "InnoDataHub": "InnoDataHub"
+  },
   "projects": {
     "datasets": {
-      "title": "InnoDataHub Datasets",
-      "description": "Finding datasets is easier than ever before! Publish, discuss, search and find data for your tasks in InnoDataHub Datasets and Artificial Intelligence will be happy to help you."
+      "title": "Datasets",
+      "description": "A service created for efficient search and management of datasets"
     },
     "competition": {
-      "title": "InnoDataHub.Competitions",
-      "description": "InnoDataHub.Competitions is a platform for machine learning and data analytics competitions. Train models, share observations, create and grow together with InnoDataHub.Competitions."
+      "title": "Competitions",
+      "description": "Platform for organizing and participating in various competitions"
     },
     "GPTeacher": {
       "title": "GPTeacher",
-      "description": "GRTeacher is an interactive platform for creating perfect queries for language models.  Learn and get instant improvement recommendations from artificial intelligence. Solve the suggested tasks, track your progress and achieve better results with each new query!"
+      "description": "Cutting-edge artificial intelligence designed for personalized learning"
     },
     "treeTasks": {
       "title": "Graphit",
-      "description": "Graphit is a platform for automatic creation of AI-assisted training courses based on training materials. By uploading any material, you will get a structured theory with practical tasks to master it!"
+      "description": "Educational platform with a hierarchy of practical tasks in the form of a graph"
     },
     "taskGenerator": {
       "title": "QuestGen",
@@ -29,7 +44,7 @@
     },
     "taskChecker": {
       "title": "MathHelper",
-      "description": "MathHelper is a platform to get feedback on solving math problems. Upload your problems, solve available problems, get feedback and pump up your knowledge together with the math AI assistant. "
+      "description": "An innovative tool designed to test and solve math problems"
     }
   }
 }

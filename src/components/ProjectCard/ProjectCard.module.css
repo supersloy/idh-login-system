@@ -1,9 +1,57 @@
 .Card {
-  width: calc(100% / 3 - 32px / 3);
-  @media (max-width: 900px) {
-    width: calc(100% / 2 - 16px / 2);
+  width: 420px;
+  height: 280px;
+  box-shadow: 10px 10px 3px 0px #aaabfa;
+  border-radius: 50px;
+}
+
+.Card > div {
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Title {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  color: #3b4168;
+  /* margin-top: 30px; */
+}
+
+.Description {
+  font-family: IBM Plex Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  color: #3b4168;
+
+  width: 330px;
+  height: 90px;
+}
+
+.VisitButton {
+  width: 200px;
+  height: 45px;
+  border-radius: 30px;
+  background: #aaabfa !important;
+  border: none;
+
+  &:hover {
+    filter: brightness(0.85) !important;
   }
-  @media (max-width: 600px) {
-    width: 100%;
-  }
+}
+
+.VisitButton > span {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 600;
+  /* line-height: 80px; */
+  text-align: left;
+  color: #ffffff;
 }

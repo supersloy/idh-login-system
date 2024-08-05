@@ -1,0 +1,102 @@
+.Header {
+  width: 100%;
+  padding: 0;
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4e7f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.LoginButton {
+  width: 136px;
+  height: 44px;
+  margin-right: 28px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.LanguageButton {
+  height: 44px;
+}
+
+.UserDropdown {
+  color: #3b4168;
+  font-family: IBM Plex sans, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+
+  width: 200px;
+  height: 44px;
+  margin-right: 28px;
+  font-size: 16px;
+  font-weight: 500;
+
+  box-shadow: 0 4px 15px rgba(33, 36, 55, 0.12);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  padding: 0 1rem;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.Logos {
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+  gap: 1rem;
+}
+
+.NavBar {
+  width: 1000px;
+  @media screen and (max-width: 1600px) {
+    display: none;
+  }
+}
+
+.NavBar > li {
+  padding: 0 !important;
+  /* background-color: red; */
+  &:hover {
+    background: #f5fbff;
+  }
+
+  &::after {
+    border: none !important;
+  }
+}
+
+.NavLink {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.NavLink > span {
+  color: #3b4168;
+  font-size: 14px;
+  font-family: "IBM Plex sans";
+}
+
+.Active {
+  background: #f5fbff;
+}
+
+.NavLink:hover {
+  background: #f5fbff;
+}
+
+.NavLink > svg {
+  padding-right: 8px;
+}
+
+@media screen and (max-width: 1600px) {
+  .NavLink {
+    padding: 0 5px;
+  }
+}
