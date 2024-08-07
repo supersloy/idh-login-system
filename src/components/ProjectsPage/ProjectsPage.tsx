@@ -22,7 +22,7 @@ export function ProjectsPage() {
 
           <div className={styles.ProjectsContainer}>
             {projects.map((project) => (
-              <ProjectCard {...project} />
+              <ProjectCard key={project.name} {...project} />
             ))}
           </div>
         </Flex>

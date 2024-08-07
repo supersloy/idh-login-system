@@ -14,6 +14,12 @@ i18n
   .init({
     fallbackLng: "en",
     debug: true,
+    // backend: {
+    backend: {
+      requestOptions: {
+        cache: "no-store",
+      },
+    },
     interpolation: {
       escapeValue: false,
     },
