@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
@@ -23,6 +23,30 @@ export default defineConfig({
   },
   resolve: {
     alias: [
+      {
+        find: "@components",
+        replacement: "/src/components",
+      },
+      {
+        find: "@pages",
+        replacement: "/src/pages",
+      },
+      {
+        find: "@api",
+        replacement: "/src/core/api",
+      },
+      {
+        find: "@storage",
+        replacement: "/src/core/storage",
+      },
+      {
+        find: "@utils",
+        replacement: "/src/core/utils",
+      },
+      {
+        find: "@core",
+        replacement: "/src/core",
+      },
       {
         find: "@",
         replacement: "/src",

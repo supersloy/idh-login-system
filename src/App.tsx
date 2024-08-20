@@ -5,7 +5,7 @@ import {
   keycloak,
   KeyCloakProvider,
 } from "./components/KeyCloakProvider/KeyCloakProvider";
-import { Router } from "./components/Router/Router";
+import { Router } from "./pages/Router";
 
 import "@mantine/core/styles.css";
 

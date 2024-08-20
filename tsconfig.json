@@ -1,11 +1,38 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "types": ["vite-plugin-svgr/client", "vite/client"],
+
+    "baseUrl": "./",
+
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@api/*": ["src/core/api/*"],
+      "@storage/*": ["src/core/storage/*"],
+      "@utils/*": ["src/core/utils/*"],
+      "@core/*": ["src/core/*"],
+      "@/*": ["src/*"],
     },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+
+    /* Linting */
+    "strict": true,
+    // "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src", "postcss.config.cjs"]
 }

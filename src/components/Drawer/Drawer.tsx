@@ -2,15 +2,15 @@ import { Avatar, Box, Button, Stack } from "@mantine/core";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { projects } from "../../pages/ProjectsPage/projects";
 import { KeyCloakContext } from "../KeyCloakProvider";
-import { projects } from "../ProjectsPage/projects";
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
 import DrawerOpenerIcon from "./DrawerOpener.svg";
 import RightIcon from "./RightIcon.svg";
 
 import classes from "./Drawer.module.css";
 
-export default function Drawer() {
+export function Drawer() {
   const [active, setActive] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const keycloak = useContext(KeyCloakContext);

@@ -1,4 +1,5 @@
-import { Button, Group, Menu } from "@mantine/core";
+import { Button, Center, Group, Menu } from "@mantine/core";
+import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 
 import AESsvg from "./svgs/AES.svg";
@@ -14,11 +15,11 @@ const languageDict = {
   en: <UK />,
 };
 
-const AppHeader = () => {
+const Header = () => {
   const { i18n } = useTranslation();
 
   return (
-    <div className={classes.Header}>
+    <Group h="100%" w="100%" p="0" justify="space-between" align="center">
       <div className={classes.Logos}>
         <a style={{ display: "flex" }} href="https://unionepro.ru/">
           <UIsvg />
@@ -31,27 +32,30 @@ const AppHeader = () => {
         </a>
       </div>
       <Group gap="1rem">
-        <Menu>
+        <Menu width="target">
           <Menu.Target>
-            <Button className={classes.LanguageButton}>
+            <Button
+              h={44}
+              rightSection={<IconChevronDown />}
+              variant="outline"
+              p="xs"
+            >
               {languageDict[i18n.language as keyof typeof languageDict]}
             </Button>
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item onClick={() => i18n.changeLanguage("en")}>
-              {languageDict["en"]}
+              <Center>{languageDict["en"]}</Center>
             </Menu.Item>
-          </Menu.Dropdown>
-          <Menu.Dropdown>
             <Menu.Item onClick={() => i18n.changeLanguage("ru-RU")}>
-              {languageDict["ru-RU"]}
+              <Center>{languageDict["ru-RU"]}</Center>
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
         <HeaderUser />
       </Group>
-    </div>
+    </Group>
   );
 };
 
-export default AppHeader;
+export { Header };
