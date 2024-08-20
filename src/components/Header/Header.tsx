@@ -1,4 +1,4 @@
-import { Button, Center, Group, Menu } from "@mantine/core";
+import { Box, Button, Center, Group, Menu } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 
@@ -32,16 +32,12 @@ const Header = () => {
         </a>
       </div>
       <Group gap="1rem">
-        <Menu width="target">
+        <Menu width="target" trigger="hover">
           <Menu.Target>
-            <Button
-              h={44}
-              rightSection={<IconChevronDown />}
-              variant="outline"
-              p="xs"
-            >
+            <Group className={classes.UserDropdown} mr="0" miw="auto" gap="sm">
               {languageDict[i18n.language as keyof typeof languageDict]}
-            </Button>
+              <IconChevronDown />
+            </Group>
           </Menu.Target>
           <Menu.Dropdown>
             <Menu.Item onClick={() => i18n.changeLanguage("en")}>

@@ -1,4 +1,5 @@
-import { Box, Button, Menu } from "@mantine/core";
+import { Box, Button, Center, Menu } from "@mantine/core";
+import { IconChevronDown } from "@tabler/icons-react";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -22,6 +23,7 @@ export default function HeaderUser() {
   const [userInfo, setUserInfo] = useState<UserInfo | undefined>(
     keycloak.userInfo as undefined
   );
+  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
     keycloak
@@ -31,17 +33,29 @@ export default function HeaderUser() {
 
   if (!keycloak.authenticated) {
     return (
-      <Button className={classes.LoginButton} onClick={() => keycloak.login()}>
+      <Button
+        variant="outline"
+        className={classes.LoginButton}
+        w={136}
+        h={44}
+        onClick={() => keycloak.login()}
+      >
         {t("login")}
       </Button>
     );
-  } else {
-    return (
-      <Menu>
-        <Menu.Target>
-          <Box className={classes.UserDropdown}>{userInfo?.email}</Box>
-        </Menu.Target>
-      </Menu>
-    );
   }
+
+  return (
+    <Menu width="target" trigger="hover" opened={opened} onChange={setOpened}>
+      <Menu.Target>
+        <div className={classes.UserDropdown}>
+          {userInfo?.email}
+          <IconChevronDown />
+        </div>
+      </Menu.Target>
+      <Menu.Dropdown>
+        <Menu.Item onClick={() => keycloak.logout()}>{t("logout")}</Menu.Item>
+      </Menu.Dropdown>
+    </Menu>
+  );
 }

@@ -4,6 +4,7 @@
   margin-right: 28px;
   font-size: 16px;
   font-weight: 500;
+  padding: 1rem 2rem;
 }
 
 .LanguageButton {
@@ -23,14 +24,19 @@
   font-size: 16px;
   font-weight: 500;
 
-  box-shadow: 0 4px 15px rgba(33, 36, 55, 0.12);
   display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 4px 15px rgba(33, 36, 55, 0.12);
   justify-content: space-between;
   border-radius: 6px;
-  padding: 0 1rem;
 
   user-select: none;
   cursor: pointer;
+
+  /* &:hover {
+    transform: scale(1.02);
+  } */
 }
 
 .Logos {

@@ -10,7 +10,7 @@ function Layout() {
 
   return (
     <AppShell
-      header={{ height: 60 }}
+      header={{ height: 64 }}
       navbar={{
         width: 300,
         breakpoint: "sm",
