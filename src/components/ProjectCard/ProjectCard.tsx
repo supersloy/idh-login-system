@@ -1,4 +1,4 @@
-import { Button, Card } from "@mantine/core";
+import { Button, Card, Paper, Stack } from "@mantine/core";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -24,7 +24,7 @@ export function ProjectCard({ name, link }: ProjectInfo) {
 
   return (
     <>
-      <Card className={classes.Card}>
+      <Paper withBorder className={classes.Card}>
         <div className={classes.Title}>{t(`projects.${name}.title`)}</div>
         <div className={classes.Description}>
           {t(`projects.${name}.description`)}
@@ -32,7 +32,7 @@ export function ProjectCard({ name, link }: ProjectInfo) {
         <Button className={classes.VisitButton} onClick={handleClick}>
           {t("goToProject")}
         </Button>
-      </Card>
+      </Paper>
       <RequireAuthModal open={authModalOpen} setOpen={setAuthModalOpen} />
     </>
   );
