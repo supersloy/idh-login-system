@@ -1,10 +1,11 @@
-import { Button, Card } from "antd";
-
-import classes from "./ProjectCard.module.css";
-import { useTranslation } from "react-i18next";
+import { Button, Card } from "@mantine/core";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { KeyCloakContext } from "../KeyCloakProvider";
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
+
+import classes from "./ProjectCard.module.css";
 
 type ProjectInfo = {
   name: string;
@@ -28,12 +29,7 @@ export function ProjectCard({ name, link }: ProjectInfo) {
         <div className={classes.Description}>
           {t(`projects.${name}.description`)}
         </div>
-        <Button
-          type="primary"
-          ghost
-          className={classes.VisitButton}
-          onClick={handleClick}
-        >
+        <Button className={classes.VisitButton} onClick={handleClick}>
           {t("goToProject")}
         </Button>
       </Card>

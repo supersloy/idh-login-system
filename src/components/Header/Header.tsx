@@ -1,15 +1,13 @@
-import { Layout, Flex, Dropdown, MenuProps, Button } from "antd";
+import { Button, Group, Menu } from "@mantine/core";
+import { useTranslation } from "react-i18next";
+
+import AESsvg from "./svgs/AES.svg";
+import Russia from "./svgs/Russia.svg";
+import UIsvg from "./svgs/UI.svg";
+import UK from "./svgs/UK.svg";
+import HeaderUser from "./HeaderUser";
 
 import classes from "./Header.module.css";
-import UIsvg from "./svgs/UI.svg";
-import AESsvg from "./svgs/AES.svg";
-import UK from "./svgs/UK.svg";
-import Russia from "./svgs/Russia.svg";
-import { useTranslation } from "react-i18next";
-import HeaderUser from "./HeaderUser";
-import HeaderNavigation from "./HeaderNavigation";
-import { DownOutlined } from "@ant-design/icons";
-const { Header } = Layout;
 
 const languageDict = {
   "ru-RU": <Russia />,
@@ -19,27 +17,8 @@ const languageDict = {
 const AppHeader = () => {
   const { i18n } = useTranslation();
 
-  const items: MenuProps["items"] = [
-    {
-      key: "ru-RU",
-      label: (
-        <Flex justify="center" onClick={() => i18n.changeLanguage("ru-RU")}>
-          {languageDict["ru-RU"]}
-        </Flex>
-      ),
-    },
-    {
-      key: "en",
-      label: (
-        <Flex justify="center" onClick={() => i18n.changeLanguage("en")}>
-          {languageDict["en"]}
-        </Flex>
-      ),
-    },
-  ];
-
   return (
-    <Header className={classes.Header}>
+    <div className={classes.Header}>
       <div className={classes.Logos}>
         <a style={{ display: "flex" }} href="https://unionepro.ru/">
           <UIsvg />
@@ -51,17 +30,27 @@ const AppHeader = () => {
           <AESsvg />
         </a>
       </div>
-      <HeaderNavigation />
-      <Flex gap="1rem">
-        <Dropdown menu={{ items }} className={classes.LanguageDropdown}>
-          <Button className={classes.LanguageButton}>
-            {languageDict[i18n.language as keyof typeof languageDict]}
-            <DownOutlined />
-          </Button>
-        </Dropdown>
+      <Group gap="1rem">
+        <Menu>
+          <Menu.Target>
+            <Button className={classes.LanguageButton}>
+              {languageDict[i18n.language as keyof typeof languageDict]}
+            </Button>
+          </Menu.Target>
+          <Menu.Dropdown>
+            <Menu.Item onClick={() => i18n.changeLanguage("en")}>
+              {languageDict["en"]}
+            </Menu.Item>
+          </Menu.Dropdown>
+          <Menu.Dropdown>
+            <Menu.Item onClick={() => i18n.changeLanguage("ru-RU")}>
+              {languageDict["ru-RU"]}
+            </Menu.Item>
+          </Menu.Dropdown>
+        </Menu>
         <HeaderUser />
-      </Flex>
-    </Header>
+      </Group>
+    </div>
   );
 };
 

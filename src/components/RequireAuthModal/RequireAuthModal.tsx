@@ -1,4 +1,4 @@
-import { Button, Modal } from "antd";
+import { Button, Modal } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 
 type RequireAuthModalProps = {
@@ -14,17 +14,10 @@ export default function RequireAuthModal({
   const { t } = useTranslation();
 
   return (
-    <Modal
-      open={open}
-      onOk={close}
-      onCancel={close}
-      footer={[
-        <Button key="back" onClick={close}>
-          {t("requireAuth.return")}
-        </Button>,
-      ]}
-      title={t("requireAuth.text")}
-    >
+    <Modal opened={open} onClose={close} title={t("requireAuth.text")}>
+      <Button key="back" onClick={close}>
+        {t("requireAuth.return")}
+      </Button>
       {/* {t("requireAuth.text")} */}
     </Modal>
   );

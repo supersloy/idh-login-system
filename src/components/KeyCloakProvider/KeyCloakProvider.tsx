@@ -20,4 +20,4 @@ async function getKeyCloakContext() {
 const { KeyCloakContext, keycloak } = await getKeyCloakContext();
 const provider = KeyCloakContext.Provider;
 
-export { KeyCloakContext, provider as KeyCloakProvider, keycloak };
+export { keycloak,KeyCloakContext, provider as KeyCloakProvider };

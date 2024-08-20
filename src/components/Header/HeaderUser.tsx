@@ -1,9 +1,10 @@
-import { Button, Dropdown, Space } from "antd";
-import classes from "./Header.module.css";
+import { Box, Button, Menu } from "@mantine/core";
 import { useContext, useEffect, useState } from "react";
-import { KeyCloakContext } from "../KeyCloakProvider";
 import { useTranslation } from "react-i18next";
-import { DownOutlined } from "@ant-design/icons";
+
+import { KeyCloakContext } from "../KeyCloakProvider";
+
+import classes from "./Header.module.css";
 
 type UserInfo = {
   email: string;
@@ -30,32 +31,17 @@ export default function HeaderUser() {
 
   if (!keycloak.authenticated) {
     return (
-      <Button
-        type="primary"
-        ghost
-        className={classes.LoginButton}
-        onClick={() => keycloak.login()}
-      >
+      <Button className={classes.LoginButton} onClick={() => keycloak.login()}>
         {t("login")}
       </Button>
     );
   } else {
     return (
-      <Dropdown
-        menu={{
-          items: [
-            {
-              key: "1",
-              label: <div onClick={() => keycloak.logout()}>{t("logout")}</div>,
-            },
-          ],
-        }}
-      >
-        <Space className={classes.UserDropdown}>
-          {userInfo?.email}
-          <DownOutlined />
-        </Space>
-      </Dropdown>
+      <Menu>
+        <Menu.Target>
+          <Box className={classes.UserDropdown}>{userInfo?.email}</Box>
+        </Menu.Target>
+      </Menu>
     );
   }
 }
