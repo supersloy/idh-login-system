@@ -1,6 +1,6 @@
 import { Box } from "@mantine/core";
 
-import DrawerOpenerIcon from "./DrawerOpener.svg";
+import DrawerOpenerIcon from "./svgs/DrawerOpener.svg";
 
 import classes from "./Drawer.module.css";
 

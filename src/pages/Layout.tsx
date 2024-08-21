@@ -17,6 +17,7 @@ function Layout() {
         breakpoint: "sm",
         collapsed: { mobile: !opened, desktop: !opened },
       }}
+      footer={{ height: 0 }}
     >
       <AppShell.Header>
         <Header />

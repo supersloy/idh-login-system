@@ -1,9 +1,8 @@
 import { Group, Stack } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 
+import { projects } from "@/projects";
 import { ProjectCard } from "@components/ProjectCard/ProjectCard";
-
-import { projects } from "./projects";
 
 import styles from "./ProjectsPage.module.css";
 

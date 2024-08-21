@@ -1,26 +1,31 @@
 import { Avatar, Box, Button, Stack, Text } from "@mantine/core";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
-import { projects } from "../../pages/ProjectsPage/projects";
-import { KeyCloakContext } from "../KeyCloakProvider";
+import { projects } from "@/projects";
+import { useUserInfo } from "@hooks/useUserInfo";
+
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
-import RightIcon from "./RightIcon.svg";
+import RightIcon from "./svgs/RightIcon.svg";
 
 import classes from "./Drawer.module.css";
 
 export function Drawer() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const keycloak = useContext(KeyCloakContext);
   const { t } = useTranslation();
+  const { userInfo, authenticated } = useUserInfo();
+  const nav = useNavigate();
 
-  const handleClick = (href: string) => {
-    if (keycloak.authenticated) window.location.href = href;
+  const handleClick = (route: string) => {
+    if (authenticated) nav(route);
     else setAuthModalOpen(true);
   };
 
   return (
     <>
+      <RequireAuthModal open={authModalOpen} setOpen={setAuthModalOpen} />
+
       <Box w="100%" className={classes.Drawer}>
         <Stack
           justify="between"
@@ -32,11 +37,11 @@ export function Drawer() {
             </div>
 
             <Stack gap="0">
-              {projects.map(({ name, link }) => (
+              {projects.map(({ name, route }) => (
                 <Button
                   id={name}
                   className={classes.Button}
-                  onClick={() => handleClick(link)}
+                  onClick={() => handleClick(route)}
                   key={name}
                   variant="subtle"
                   leftSection={<RightIcon />}
@@ -48,13 +53,17 @@ export function Drawer() {
               ))}
             </Stack>
           </Stack>
-          <Box className={classes.Account}>
-            <Avatar style={{ backgroundColor: "#3B4168" }}></Avatar>
-            <span className={classes.AccountText}>Account</span>
-          </Box>
+
+          {authenticated && (
+            <Box className={classes.Account}>
+              <Avatar c="blue" />
+              <span className={classes.AccountText}>
+                {userInfo?.preferred_username}
+              </span>
+            </Box>
+          )}
         </Stack>
       </Box>
-      <RequireAuthModal open={authModalOpen} setOpen={setAuthModalOpen} />
     </>
   );
 }

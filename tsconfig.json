@@ -20,6 +20,7 @@
 
     "paths": {
       "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],
       "@api/*": ["src/core/api/*"],
       "@storage/*": ["src/core/storage/*"],
@@ -30,7 +31,7 @@
 
     /* Linting */
     "strict": true,
-    // "noUnusedLocals": true,
+    "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },

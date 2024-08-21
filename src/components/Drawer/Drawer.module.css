@@ -2,7 +2,7 @@
   position: fixed;
   width: 20px;
   height: 20px;
-  top: 85px;
+  bottom: 20px;
   left: 20px;
   cursor: pointer;
 
@@ -11,11 +11,11 @@
   }
 
   transition-property: transform;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   &.OpenerReversed {
     left: 320px;
 
-    transform: rotate(0.5turn);
+    transform: rotate(-0.5turn);
   }
 }
 
@@ -61,7 +61,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   user-select: none;
 }
 
