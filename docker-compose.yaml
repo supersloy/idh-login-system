@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  keycloak:
+    container_name: idh-login-keycloak
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev
+    environment:
+      # DB
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgres_kc
+      KC_DB_URL_DATABASE: db_name
+      KC_DB_PASSWORD: password
+      KC_DB_USERNAME: user_name
+      KC_DB_SCHEMA: public
+      # Admin
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    ports:
+      - "41000:8080"
+    depends_on:
+      postgres_kc:
+        condition: service_healthy
+    networks:
+      network_sso:
+
+  postgres_kc:
+    container_name: idh-login-postgres
+    image: postgres:15
+    command: postgres -c 'max_connections=200' && postgres -c 'shared_buffers=24MB'
+    environment:
+      POSTGRES_DB: db_name
+      POSTGRES_USER: user_name
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "41002:5432"
+    networks:
+      network_sso:
+
+  frontend:
+    container_name: idh-login-frontend
+    build: ./
+    ports:
+      - "41001:80"
+    depends_on:
+      keycloak:
+        condition: service_started
+
+networks:
+  network_sso:
+    ipam:
+      driver: default
