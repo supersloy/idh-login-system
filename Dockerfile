@@ -12,6 +12,7 @@ RUN npm run build
 
 FROM nginx as hosting-step
 RUN echo "Starting stage 2: Hosting the static files"
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-step /app/dist /usr/share/nginx/html
 EXPOSE 80
 
