@@ -1,0 +1,109 @@
+:root {
+  --project-primary-color: rgb(0, 113, 207);
+}
+
+.btn {
+  background-image: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+
+#kc-locale {
+  border-radius: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--project-primary-color);
+  position: absolute !important;
+}
+
+.kc-dropdown {
+  & > button {
+    margin: 1rem;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.25rem;
+    width: 140px;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    text-transform: capitalize;
+    border: none;
+
+    &::after {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 0.255em;
+      vertical-align: 0.255em;
+      content: "";
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+    }
+  }
+
+  & > ul {
+    border-radius: 0.5rem;
+  }
+
+  & > ul > li {
+    text-transform: capitalize;
+    text-align: center !important;
+  }
+}
+
+a {
+  color: var(--project-primary-color);
+}
+
+a:hover {
+  color: var(--project-primary-color);
+}
+
+input:hover,
+input:focus {
+  border-color: var(--project-primary-color) !important;
+}
+
+.project-primary-color {
+  color: var(--project-primary-color) !important;
+}
+
+.project-primary-color-background {
+  background-color: var(--project-primary-color) !important;
+}
+
+.project-on-primary-color {
+  color: #fff !important;
+}
+
+.login-pf body {
+  background: url("https://auth.unionepro.ru/static/media/Background-img.187fb6dd05a025423ebd.png")
+    center;
+  /* background: white !important; */
+  background-size: cover;
+  height: 100%;
+}
+
+.card-pf {
+  border-radius: 1rem;
+}
+
+.btn {
+  border-radius: 0.5rem;
+}
+
+.form-control {
+  border-radius: 0.5rem;
+}
