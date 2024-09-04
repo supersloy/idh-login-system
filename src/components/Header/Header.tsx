@@ -6,6 +6,7 @@ import AESsvg from "./svgs/AES.svg";
 import Russia from "./svgs/Russia.svg";
 import UIsvg from "./svgs/UI.svg";
 import UK from "./svgs/UK.svg";
+import { HeaderNavigation } from "./HeaderNavigation";
 import HeaderUser from "./HeaderUser";
 
 import classes from "./Header.module.css";
@@ -20,21 +21,28 @@ const Header = () => {
 
   return (
     <Group h="100%" w="100%" p="0" justify="space-between" align="center">
-      <div className={classes.Logos}>
-        <a style={{ display: "flex" }} href="https://unionepro.ru/">
-          <UIsvg />
-        </a>
-        <a
-          style={{ display: "flex" }}
-          href="https://engineerschool.innopolis.university/"
-        >
-          <AESsvg />
-        </a>
-      </div>
+      <Group ml="28px" gap="1rem">
+        <div className={classes.Logos}>
+          <a style={{ display: "flex" }} href="https://unionepro.ru/">
+            <UIsvg />
+          </a>
+          <a
+            style={{ display: "flex" }}
+            href="https://engineerschool.innopolis.university/"
+          >
+            <AESsvg />
+          </a>
+        </div>
+      </Group>
+
+      <Group h={"100%"}>
+        <HeaderNavigation />
+      </Group>
+
       <Group gap="1rem">
         <Menu width="target" trigger="hover">
           <Menu.Target>
-            <Group className={classes.UserDropdown} mr="0" miw="auto" gap="sm">
+            <Group className={classes.Dropdown} mr="0" miw="auto" gap="sm">
               {languageDict[i18n.language as keyof typeof languageDict]}
               <IconChevronDown />
             </Group>

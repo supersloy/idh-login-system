@@ -5,9 +5,10 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  /* padding: 1rem; */
+  padding: 1rem;
   align-items: center;
   justify-content: space-evenly;
+  /* gap: ; */
 }
 
 .Card > div {
@@ -21,6 +22,7 @@
 .Title {
   font-family: Montserrat;
   font-size: 30px;
+  line-height: 30px;
   font-weight: 700;
   text-align: left;
   color: #3b4168;

@@ -10,7 +10,7 @@
   height: 44px;
 }
 
-.UserDropdown {
+.Dropdown {
   color: #3b4168;
   font-family: IBM Plex sans, sans-serif;
   font-size: 16px;
@@ -20,7 +20,7 @@
   min-width: 200px;
   gap: 1rem;
   height: 44px;
-  
+
   margin-right: 28px;
   font-size: 16px;
   font-weight: 500;
@@ -47,51 +47,17 @@
   gap: 1rem;
 }
 
-.NavBar {
-  width: 1000px;
-  @media screen and (max-width: 1600px) {
-    display: none;
-  }
-}
-
-.NavBar > li {
-  padding: 0 !important;
-  /* background-color: red; */
-  &:hover {
-    background: #f5fbff;
-  }
-
-  &::after {
-    border: none !important;
-  }
-}
-
 .NavLink {
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-}
+  & span {
+    font-size: 18px;
+    font-family: IBM Plex sans, sans-serif;
+  }
 
-.NavLink > span {
-  color: #3b4168;
-  font-size: 14px;
-  font-family: "IBM Plex sans";
-}
+  & > span {
+    margin-right: 8px;
+  }
 
-.Active {
-  background: #f5fbff;
-}
-
-.NavLink:hover {
-  background: #f5fbff;
-}
-
-.NavLink > svg {
-  padding-right: 8px;
-}
-
-@media screen and (max-width: 1600px) {
-  .NavLink {
-    padding: 0 5px;
+  &:hover {
+    background: #e9f3fc;
   }
 }

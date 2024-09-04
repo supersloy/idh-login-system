@@ -1,7 +1,15 @@
+import {
+  IconBinaryTree,
+  IconChartBarPopular,
+  IconFolders,
+  IconMessageCode,
+} from "@tabler/icons-react";
+
 export type ProjectInfo = {
   name: string;
   route: string;
   link: string;
+  icon: JSX.Element;
 };
 
 export const projects = [
@@ -9,16 +17,19 @@ export const projects = [
     name: "datasets",
     route: "/datasets",
     link: import.meta.env.VITE_DATASETS_LINK,
+    icon: <IconFolders />,
   },
   {
     name: "graphit",
     route: "/graphit",
     link: import.meta.env.VITE_GRAPHIT_LINK,
+    icon: <IconBinaryTree />,
   },
   {
     name: "GPTeacher",
     route: "/gpteacher",
     link: import.meta.env.VITE_GPTEACHER_LINK,
+    icon: <IconMessageCode />,
   },
   // {
   //   name: "taskChecker",
@@ -28,6 +39,7 @@ export const projects = [
     name: "competition",
     route: "/competition",
     link: import.meta.env.VITE_COMPETITION_LINK,
+    icon: <IconChartBarPopular />,
   },
   // {
   //   name: "taskGenerator",

@@ -2,12 +2,11 @@ import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 
-import { DrawerOpener } from "@components/Drawer";
 import { Drawer } from "@components/Drawer/Drawer";
 import { Header } from "@components/Header";
 
 function Layout() {
-  const [opened, { toggle }] = useDisclosure(false);
+  const [opened] = useDisclosure(false);
 
   return (
     <AppShell

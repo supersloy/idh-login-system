@@ -32,7 +32,7 @@ export default function HeaderUser() {
   return (
     <Menu width="target" trigger="hover" opened={opened} onChange={setOpened}>
       <Menu.Target>
-        <div className={classes.UserDropdown}>
+        <div className={classes.Dropdown}>
           {userInfo?.email}
           <IconChevronDown />
         </div>

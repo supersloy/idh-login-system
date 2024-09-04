@@ -11,7 +11,7 @@ export function ProjectsPage() {
   return (
     <>
       <Stack align="center" gap="sm" style={{ minWidth: "500px" }}>
-        <Stack gap={0} align="center">
+        <Stack gap="5px" align="center">
           <div className={styles.Title + " " + styles.Text}>InnoDataHub</div>
           <div className={styles.SubTitle + " " + styles.Text}>
             {t("propoganda")}
