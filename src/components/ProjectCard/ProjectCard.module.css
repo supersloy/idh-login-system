@@ -1,8 +1,8 @@
 .Card {
-  width: 420px;
-  height: 280px;
-  box-shadow: 10px 10px 3px 0px #aaabfa;
-  border-radius: 50px;
+  width: 400px;
+  height: 262px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   /* padding: 1rem; */
@@ -40,20 +40,20 @@
 }
 
 .VisitButton {
-  width: 200px;
-  height: 45px;
-  border-radius: 30px;
-  background: #aaabfa !important;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  background: #2287da;
   border: none;
 
   &:hover {
-    filter: brightness(0.85) !important;
+    background: #0069bf;
   }
 }
 
 .VisitButton > span {
   font-family: Montserrat;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   /* line-height: 80px; */
   text-align: left;

@@ -28,7 +28,7 @@ function Layout() {
       <AppShell.Main>
         <Outlet />
       </AppShell.Main>
-      <DrawerOpener opened={opened} toggleOpened={toggle} />
+      {/* <DrawerOpener opened={opened} toggleOpened={toggle} /> */}
     </AppShell>
   );
 }
