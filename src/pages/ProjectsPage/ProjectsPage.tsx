@@ -3,6 +3,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 
 import { projects } from "@/projects";
+import { scrollToTarget } from "@/utils/scrollToTarget";
 import { ProjectCard } from "@components/ProjectCard/ProjectCard";
 import { ProjectFullDescriptions } from "@components/ProjectFullDescription/ProjectsFullDescription";
 
@@ -30,7 +31,12 @@ export function ProjectsPage() {
           ))}
         </div>
         <div style={{ marginTop: "140px" }}>
-          <Group wrap="nowrap" gap="0.25rem">
+          <Group
+            wrap="nowrap"
+            gap="0.25rem"
+            onClick={() => scrollToTarget("datasets-description")}
+            style={{ cursor: "pointer" }}
+          >
             <Text size="25px" className={styles.Text} span>
               Подробнее
             </Text>

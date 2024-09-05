@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 import { projects } from "@/projects";
-import { useUserInfo } from "@hooks/useUserInfo";
+import { useUserInfo } from "@/utils/useUserInfo";
 
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
 import RightIcon from "./svgs/RightIcon.svg";

@@ -36,20 +36,8 @@ export default defineConfig({
         replacement: "/src/pages",
       },
       {
-        find: "@api",
-        replacement: "/src/core/api",
-      },
-      {
-        find: "@storage",
-        replacement: "/src/core/storage",
-      },
-      {
         find: "@utils",
-        replacement: "/src/core/utils",
-      },
-      {
-        find: "@core",
-        replacement: "/src/core",
+        replacement: "/src/utils",
       },
       {
         find: "@",

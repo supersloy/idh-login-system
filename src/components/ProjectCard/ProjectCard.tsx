@@ -1,38 +1,25 @@
 import { Button, Paper } from "@mantine/core";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import { ProjectInfo } from "@/projects";
+import { scrollToTarget } from "@/utils/scrollToTarget";
 
-import { KeyCloakContext } from "../KeyCloakProvider";
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
 
 import classes from "./ProjectCard.module.css";
 
-function scrollToTargetAdjusted(id: string) {
-  const element = document.getElementById(id)!;
-  const headerOffset = 80;
-  const elementPosition = element.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth",
-  });
-}
-
 type ProjectCardProps = ProjectInfo;
-export function ProjectCard({ name, route }: ProjectCardProps) {
+export function ProjectCard({ name }: ProjectCardProps) {
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const keycloak = useContext(KeyCloakContext);
+  // const keycloak = useContext(KeyCloakContext);
   const { t } = useTranslation();
-  const nav = useNavigate();
+  // const nav = useNavigate();
 
   const handleClick = () => {
     // if (keycloak.authenticated) nav(route);
     // else setAuthModalOpen(true);
-    scrollToTargetAdjusted(`${name}-description`);
+    scrollToTarget(`${name}-description`);
   };
 
   return (

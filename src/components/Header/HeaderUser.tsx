@@ -3,7 +3,7 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useUserInfo } from "@hooks/useUserInfo";
+import { useUserInfo } from "@/utils/useUserInfo";
 
 import { KeyCloakContext } from "../KeyCloakProvider";
 

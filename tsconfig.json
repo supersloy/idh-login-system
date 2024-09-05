@@ -23,10 +23,7 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@pages/*": ["src/pages/*"],
-      "@api/*": ["src/core/api/*"],
-      "@storage/*": ["src/core/storage/*"],
-      "@utils/*": ["src/core/utils/*"],
-      "@core/*": ["src/core/*"],
+      "@utils/*": ["src/utils/*"],
       "@/*": ["src/*"],
     },
 
