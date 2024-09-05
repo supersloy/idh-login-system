@@ -1,0 +1,17 @@
+.Title {
+  font-family: Montserrat;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: left;
+  color: #3b4168;
+  /* margin-top: 30px; */
+}
+
+.IconContainer {
+  & > svg {
+    height: 42px;
+    width: 42px;
+    color: #3b4168;
+  }
+}

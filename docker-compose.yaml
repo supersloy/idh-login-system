@@ -3,7 +3,9 @@ version: "3"
 services:
   keycloak:
     container_name: idh-login-keycloak
-    image: quay.io/keycloak/keycloak:latest
+    build:
+      context: ./
+      dockerfile: ./DockerfileKeycloak
     command: start-dev
     environment:
       # DB

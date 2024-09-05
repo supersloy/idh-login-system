@@ -18,7 +18,7 @@ function Layout() {
       }}
       footer={{ height: 0 }}
     >
-      <AppShell.Header>
+      <AppShell.Header w={"100dvw"}>
         <Header />
       </AppShell.Header>
       <AppShell.Navbar p="md">

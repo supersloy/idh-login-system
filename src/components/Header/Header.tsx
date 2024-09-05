@@ -35,11 +35,11 @@ const Header = () => {
         </div>
       </Group>
 
-      <Group h={"100%"}>
+      <Group h={"100%"} visibleFrom="md" gap="xs">
         <HeaderNavigation />
       </Group>
 
-      <Group gap="1rem">
+      <Group gap="1rem" visibleFrom="xl">
         <Menu width="target" trigger="hover">
           <Menu.Target>
             <Group className={classes.Dropdown} mr="0" miw="auto" gap="sm">
