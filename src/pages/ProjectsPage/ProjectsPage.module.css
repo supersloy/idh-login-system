@@ -2,7 +2,7 @@
   font-weight: 700;
   font-size: 60px;
   line-height: 73px;
-  margin: 180px 0 0rem;
+  margin: 40px 0 0;
 }
 
 .SubTitle {
@@ -11,22 +11,17 @@
   line-height: 37px;
 
   margin: 0;
-  margin-bottom: 98px;
 }
 
 .Text {
   font-family: "Montserrat";
   font-style: normal;
   color: #3b4168;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
 }
 
 .Ellipse1 {
   position: absolute;
-  background-color: #a020f080;
+  background-color: #b2c8ff;
 
   -webkit-filter: blur(115px);
   filter: blur(100px);
@@ -42,7 +37,7 @@
 
 .Ellipse2 {
   position: absolute;
-  background-color: #a020f080;
+  background-color: #bea5f4;
 
   -webkit-filter: blur(115px);
   filter: blur(100px);
@@ -63,8 +58,38 @@
   justify-content: center;
   width: 90%;
   gap: 30px;
+  flex: 1;
 
   @media screen and (max-width: 1400px) {
     width: 95%;
+  }
+}
+
+.IDHDescription {
+  background: rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: 1px solid #afafaf;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+
+  & > span {
+    font-family: "IBM Plex sans", sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    color: #3b4168;
+  }
+}
+
+.StartButton {
+  height: 70px;
+  border: 1px solid #afafaf;
+
+  /* border-color: var(--mantine-color-blue-6); */
+  & > span {
+    font-size: 30px;
+    font-family: "IBM Plex sans", sans-serif;
+    /* font-weight: 300; */
   }
 }
