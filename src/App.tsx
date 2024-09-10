@@ -10,25 +10,16 @@ import { Router } from "./pages/Router";
 import "@mantine/core/styles.layer.css";
 
 function App() {
-  const theme = createTheme({
-    // components: {
-    //   Button: Button.extend({
-    //     defaultProps: {
-    //       color: "gray",
-    //       variant: "outline",
-    //     },
-    //   }),
-    // },
-  });
+  const theme = createTheme({});
 
   return (
-    <Suspense fallback={<Loader color="blue" />}>
-      <MantineProvider theme={theme}>
+    <MantineProvider theme={theme}>
+      <Suspense fallback={<Loader color="blue" />}>
         <KeyCloakProvider value={keycloak}>
           <Router />
         </KeyCloakProvider>
-      </MantineProvider>
-    </Suspense>
+      </Suspense>
+    </MantineProvider>
   );
 }
 
