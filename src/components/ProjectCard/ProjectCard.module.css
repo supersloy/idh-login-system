@@ -5,9 +5,9 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* gap: ; */
 }
 
@@ -25,12 +25,13 @@
   line-height: 30px;
   font-weight: 700;
   text-align: left;
+  margin-top: 20px;
   color: #3b4168;
   /* margin-top: 30px; */
 }
 
 .Description {
-  font-family: IBM Plex Sans;
+  font-family: "IBM Plex Sans";
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
@@ -42,22 +43,13 @@
 }
 
 .VisitButton {
-  width: 250px;
-  height: 40px;
+  width: 300px;
+  height: 35px;
   border-radius: 10px;
-  background: #2287da;
-  border: none;
-
-  &:hover {
-    background: #0069bf;
-  }
 }
 
 .VisitButton > span {
-  font-family: Montserrat;
-  font-size: 20px;
-  font-weight: 600;
-  /* line-height: 80px; */
+  font-size: 16px;
   text-align: left;
   color: #ffffff;
 }

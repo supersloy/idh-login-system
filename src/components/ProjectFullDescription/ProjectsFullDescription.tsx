@@ -1,8 +1,10 @@
-import { Button, Group, Image, Stack, Text } from "@mantine/core";
-import { useTranslation } from "react-i18next";
+import { Button, Flex, Group, Image, Stack, Text } from "@mantine/core";
+import { useContext, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
-import competitionsImage from "@/assets/competitions.png";
 import { projects } from "@/projects";
+import { KeyCloakContext } from "@components/KeyCloakProvider";
+import RequireAuthModal from "@components/RequireAuthModal/RequireAuthModal";
 
 import styles from "./ProjectsFullDescription.module.css";
 
@@ -11,43 +13,61 @@ type ProjectLineProps = {
 
   name: string;
   icon: JSX.Element;
-  route: string;
-  image?: JSX.Element;
+  image: string;
   rtl?: boolean;
+
+  disabledReason?: string;
+
+  onGoToProject: () => void;
 };
 
 function ProjectLine({
   children,
   name,
   icon,
-  route,
   image,
   rtl,
+  disabledReason,
+  onGoToProject,
 }: ProjectLineProps) {
   const { t } = useTranslation();
+  const onClick = onGoToProject;
+
   const productDescription = (
     <Stack flex={1} align="flex-start">
       {children}
-      <Button component="a" href={route} w={260} h={40}>
-        Перейти к продукту
+      {/* <Group w="100%" justify={rtl ? "flex-start" : "flex-end"}> */}
+      <Button
+        component="a"
+        w={300}
+        h={35}
+        onClick={onClick}
+        radius={10}
+        fz={16}
+        disabled={!!disabledReason}
+      >
+        {t("goToProject")}
       </Button>
+      {disabledReason && (
+        <Text c="dimmed" fz={20}>
+          {t(disabledReason)}
+        </Text>
+      )}
+      {/* </Group> */}
     </Stack>
   );
 
-  const imageC = image ?? (
-    <Image radius="sm" flex={1} w="40%" src={competitionsImage} />
-  );
-
-  const content = rtl ? (
-    <>
-      {imageC}
-      {productDescription}
-    </>
-  ) : (
-    <>
-      {productDescription}
-      {imageC}
-    </>
+  const imageComponent = (
+    <Image
+      radius="30px"
+      flex={1}
+      w="40%"
+      src={image}
+      style={{
+        // border: "1px solid #B2C8FF",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
+      }}
+    />
   );
 
   return (
@@ -56,74 +76,56 @@ function ProjectLine({
         <div className={styles.IconContainer}>{icon}</div>
         <Text className={styles.Title}>{t(`projects.${name}.title`)}</Text>
       </Group>
-      <Group wrap="nowrap" align="flex-start" gap={50}>
-        {content}
-      </Group>
+      <Flex
+        wrap="nowrap"
+        align="flex-start"
+        gap={50}
+        direction={rtl ? "row-reverse" : "row"}
+      >
+        {productDescription}
+        {imageComponent}
+      </Flex>
     </Stack>
   );
 }
 
-const projectDescriptions = {
-  datasets: (
-    <Text c="#3B4168" size="lg" span>
-      InnoDataHub предоставляет возможность быстро находить и создавать
-      собственные датасеты. Основные функции: Поиск и фильтрация по тегам для
-      быстрого поиска нужных датасетов Загрузка и скачивание позволяет
-      обмениваться наборами данных Использование ИИ для автоматического
-      добавления описания и тегов при загрузке датасетов Безопасность контента.
-      Загружаемые датасет сканируется на наличие нарушений и для предотвращения
-      утечки персональных данных
-    </Text>
-  ),
-  graphit: (
-    <Text c="#3B4168" size="lg" span>
-      Образовательная платформа Graphit предлагает пользователям возможность
-      проходить курсы, создавать собственные курсы или загружать материалы с
-      помощью ИИ. Основные функции включают: Прохождение курсов с доступом к
-      разнообразным темам и материалам Создание курсов самостоятельно или с
-      помощью ИИ, который помогает структурировать и оформлять контент
-      Отображение прогресса в виде графа, что позволяет пользователям наглядно
-      отслеживать свои достижения и оставшиеся задачи
-    </Text>
-  ),
-  GPTeacher: (
-    <Text c="#3B4168" size="lg" span>
-      Gptитор специализируется на обучении написанию промтов - инструкций для
-      искусственного интеллекта. Она предоставляет возможности для тех, кто
-      хочет освоить этот навык и применить его в различных сферах, от создания
-      контента до разработки ИИ-приложений. Основные функции платформы:
-      Упражнения по написанию промтов для практики навыков написания промтов
-      Получение обратной связи от ИИ, позволяющей пользователям узнать, как
-      улучшить свои промты и сделать их более эффективными
-    </Text>
-  ),
-  competition: (
-    <Text c="#3B4168" size="lg" span>
-      Соревнования — это платформа для проведения состязаний в области машинного
-      обучения и анализа данных. Компании предоставляют наборы данных и ставят
-      задачи, которые необходимо решить с помощью методов Data Science.
-      Участники соревнуются друг с другом в поиске наилучших решений. Основные
-      функции: Публикация соревнований Возможность участия в соревнованиях
-      Рейтинговая система для сравнения результатов участников Участие в
-      соревнованиях дает возможность практиковаться в решении реальных задач,
-      строить модели на больших наборах данных и развивать навыки
-      программирования и анализа.
-    </Text>
-  ),
-};
-
 export function ProjectFullDescriptions() {
+  const { t } = useTranslation();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const keycloak = useContext(KeyCloakContext);
+  const goToProject = (link: string) => {
+    if (!keycloak.authenticated) {
+      setAuthModalOpen(true);
+      return;
+    }
+    window.open(link, "_self");
+  };
+
   return (
     <Stack gap={50}>
       {projects.map((project, index) => (
-        <ProjectLine key={project.name} {...project} rtl={index % 2 === 1}>
-          {
-            projectDescriptions[
-              project.name as keyof typeof projectDescriptions
-            ]
-          }
+        <ProjectLine
+          key={project.name}
+          {...project}
+          rtl={index % 2 === 1}
+          onGoToProject={() => goToProject(project.link)}
+          disabledReason={project.name == "GPTeacher" ? "coming" : undefined}
+        >
+          <Trans
+            t={t}
+            i18nKey={`projects.${project.name}.longDescription`}
+            components={{
+              p: <Text size="22px" lh={1.5} fw={400} />,
+              ul: <ul />,
+              li: <li />,
+              s: <strong />,
+            }}
+          >
+            Loading...
+          </Trans>
         </ProjectLine>
       ))}
+      <RequireAuthModal open={authModalOpen} setOpen={setAuthModalOpen} />
     </Stack>
   );
 }

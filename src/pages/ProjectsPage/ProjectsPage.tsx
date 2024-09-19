@@ -1,6 +1,6 @@
 import { Button, Group, Paper, Space, Stack, Text } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { projects } from "@/projects";
 import { scrollToTarget } from "@/utils/scrollToTarget";
@@ -25,36 +25,54 @@ export function ProjectsPage() {
             {t("propoganda")}
           </div>
         </Stack>
-        <Group wrap="nowrap" px="56" align="stretch">
+
+        <Group
+          wrap="nowrap"
+          px="56"
+          align="stretch"
+          // style={{ flexDirection: "row-reverse" }}
+        >
           <Stack w="50%" justify="space-between" gap="lg">
             <Paper
               withBorder
-              p="lg"
-              px="xl"
+              p="3rem"
               flex={1}
               className={styles.IDHDescription}
             >
-              <Text lh={1.5} span>
-                What is Lorem Ipsum? <br />
-                <br /> Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry&apos;s
-                standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also
-                the leap into electronic typesetting, remaining essentially
-                unchanged. It was popularised in the 1960s with the release of
-                Letraset sheets containing Lorem Ipsum passages, and more
-                recently with desktop publishing software like Aldus PageMaker
-                including versions of Lorem Ipsum
-              </Text>
+              <Stack justify="space-between" h="100%">
+                <Stack justify="center" h="100%">
+                  <Text fz="1.5rem" lh={1.5} span ff="IBM Plex Sans">
+                    <Trans
+                      t={t}
+                      i18nKey="description"
+                      components={{
+                        nl: (
+                          <>
+                            <br />
+                            <br />
+                          </>
+                        ),
+                      }}
+                    >
+                      Добро пожаловать в лабораторию InnoDataHub. <br />
+                      <br /> Здесь вы сможете погрузиться в искусственный
+                      интеллект, получить доступ к необходимым ресурсам и
+                      воплотить свои идеи в жизнь. <br />
+                      <br />
+                      Изучайте передовые технологии  и развивайте свои навыки с
+                      лабораторией InnoDataHub.
+                    </Trans>
+                  </Text>
+                </Stack>
+                <Button
+                  className={styles.StartButton}
+                  variant="default"
+                  radius="md"
+                >
+                  {t("goToPreviewCourse")}
+                </Button>
+              </Stack>
             </Paper>
-            <Button
-              className={styles.StartButton}
-              variant="default"
-              radius="md"
-            >
-              Пройти стартовый курс
-            </Button>
           </Stack>
 
           <div className={styles.ProjectsContainer}>
@@ -63,6 +81,7 @@ export function ProjectsPage() {
             ))}
           </div>
         </Group>
+
         <Group
           wrap="nowrap"
           gap="0.25rem"
@@ -71,12 +90,16 @@ export function ProjectsPage() {
           py="2rem"
         >
           <Text size="25px" className={styles.Text} span>
-            Подробнее
+            <Trans t={t} i18nKey="seeMore">
+              Подробнее
+            </Trans>
           </Text>
           <IconChevronDown />
         </Group>
       </Stack>
+
       <ProjectFullDescriptions />
+
       <Space h={40} />
       <span className={styles.Ellipse1}></span>
       <span className={styles.Ellipse2}></span>

@@ -6,6 +6,7 @@ html,
   display: inline-block;
   width: 100vw;
   overflow-x: clip;
+  color: #3b4168;
 }
 
 body {

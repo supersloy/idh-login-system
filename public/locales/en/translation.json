@@ -5,11 +5,16 @@
   "english": "English",
   "russian": "Russian (Русский)",
   "signAs": "Currently signed in as: ",
-  "goToProject": "Visit",
-  "propoganda": "discover the future in a new way",
+  "goToProject": "Go to product",
+  "goToDescription": "Go to description",
+  "propoganda": "Digital laboratory for AI education",
+  "description": "Welcome to the InnoDataHub.<nl/>Here you can dive into artificial intelligence, access the resources you need, and bring your ideas to life.<nl/>Explore cutting-edge technologies and develop your skills with the InnoDataHub.",
+  "goToPreviewCourse": "Familiarize yourself with the InnoDataHub",
+  "seeMore": "Details",
+  "coming": "Product release scheduled for December 2024",
   "requireAuth": {
     "return": "Return",
-    "text": "Please, login before proceeding to the project"
+    "text": "Please, login before proceeding to the product"
   },
   "header": {
     "Portal": "Portal",
@@ -22,29 +27,25 @@
     "InnoDataHub": "InnoDataHub"
   },
   "projects": {
+    "graphit": {
+      "title": "Graphit",
+      "description": "Platform for automatic creation of courses based on educational materials",
+      "longDescription": "<p>With the <s>Graphit</s> platform, you can create and take courses based on educational materials in the form of graphs.</p><p>The main functions of the platform are:<ul><li><s>Generating a course by hand or with AI</s> based on self uploaded materials on the platform </li><li><s>Visualization</s> of materials and the links between them in the form of a graph for better learning of the course</li><li><s>Ability to integrate different types of content</s> (theory, questions, practical assignments) into graph nodes</li></ul></p>"
+    },
     "datasets": {
       "title": "Datasets",
-      "description": "A service created for efficient search and management of datasets"
+      "description": "A platform for uploading, searching and downloading datasets",
+      "longDescription": "<p>The <s>Datasets</s> platform provides the ability to upload, search and download the datasets you need. </p><p>The main features of the platform:<ul><li><s>Automatic addition of descriptions and tags</s> using AI when downloading datasets for easy search and filtering</li><li><s>Easy data sharing</s> due to the ability to store data in open and private modes</li><li><s>High level of security</s> by scanning data for privacy violations</li></ul></p>"
     },
-    "competition": {
-      "title": "Competitions",
-      "description": "Platform for organizing and participating in various competitions"
+    "booking": {
+      "title": "Booking",
+      "description": "A system for reservation of computing resources",
+      "longDescription": "<p><s>Booking</s> is a convenient and easy-to-use system for booking computing resources.</p><p>The main functions of the system are:<ul><li><s>Providing the ability to book resources</s> directly in the system without using third-party persons or systems</li><li><s>Supporting different user roles</s> to control access to resources</li><li><s>Provide a choice between GPU and non-GPU resources</s> to perform various computational tasks</li></ul></p>"
     },
     "GPTeacher": {
       "title": "GPTeacher",
-      "description": "Cutting-edge artificial intelligence designed for personalized learning"
-    },
-    "graphit": {
-      "title": "Graphit",
-      "description": "Educational platform with a hierarchy of practical tasks in the form of a graph"
-    },
-    "taskGenerator": {
-      "title": "QuestGen",
-      "description": "QuestGen is an innovative web-based platform for generating learning assignments. The platform allows users to easily create questions on a given topic based on sample assignments. Prepare materials faster and easier with QuestGen."
-    },
-    "taskChecker": {
-      "title": "MathHelper",
-      "description": "An innovative tool designed to test and solve math problems"
+      "description": "A platform for learning to work with large language models",
+      "longDescription": "<p>The <s>GRTeacher</s> platform trains users to work with large language models to generate instructions that lead to more accurate and relevant answers to given questions.</p><p>The main functions of the platform are:<ul><li><s>Helping users gain skills in writing instructions</s> in different scenarios with the help of practice tasks</li><li><s>Providing feedback from AI</s> to improve instructions</li><li><s>Objectively evaluate instructions</s> using built-in metrics</li></ul></p>"
     }
   }
 }

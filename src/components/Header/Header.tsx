@@ -1,6 +1,7 @@
-import { Center, Group, Menu } from "@mantine/core";
+import { Anchor, Center, Group, Menu, Title } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import AESsvg from "./svgs/AES.svg";
 import Russia from "./svgs/Russia.svg";
@@ -18,10 +19,11 @@ const languageDict = {
 
 const Header = () => {
   const { i18n } = useTranslation();
+  const nav = useNavigate();
 
   return (
     <Group h="100%" w="100%" p="0" justify="space-between" align="center">
-      <Group ml="28px" gap="1rem">
+      {/* <Group ml="28px" gap="1rem">
         <div className={classes.Logos}>
           <a style={{ display: "flex" }} href="https://unionepro.ru/">
             <UIsvg />
@@ -33,7 +35,17 @@ const Header = () => {
             <AESsvg />
           </a>
         </div>
-      </Group>
+      </Group> */}
+      <Title
+        ml={56}
+        onClick={() => {
+          nav("/");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        style={{ cursor: "pointer" }}
+      >
+        InnoDataHub
+      </Title>
 
       <Group h={"100%"} visibleFrom="md" gap="xs">
         <HeaderNavigation />
