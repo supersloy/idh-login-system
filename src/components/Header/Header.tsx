@@ -1,11 +1,9 @@
-import { Anchor, Center, Group, Menu, Title } from "@mantine/core";
+import { Center, Group, Menu, Title } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import AESsvg from "./svgs/AES.svg";
 import Russia from "./svgs/Russia.svg";
-import UIsvg from "./svgs/UI.svg";
 import UK from "./svgs/UK.svg";
 import { HeaderNavigation } from "./HeaderNavigation";
 import HeaderUser from "./HeaderUser";
