@@ -26,54 +26,42 @@ export function ProjectsPage() {
           </div>
         </Stack>
 
-        <Group
-          wrap="nowrap"
-          px="56"
-          align="stretch"
-          // style={{ flexDirection: "row-reverse" }}
-        >
-          <Stack w="50%" justify="space-between" gap="lg">
-            <Paper
-              withBorder
-              p="3rem"
-              flex={1}
-              className={styles.IDHDescription}
-            >
-              <Stack justify="space-between" h="100%">
-                <Stack justify="center" h="100%">
-                  <Text fz="1.5rem" lh={1.5} span ff="IBM Plex Sans">
-                    <Trans
-                      t={t}
-                      i18nKey="description"
-                      components={{
-                        nl: (
-                          <>
-                            <br />
-                            <br />
-                          </>
-                        ),
-                      }}
-                    >
-                      Добро пожаловать в лабораторию InnoDataHub. <br />
-                      <br /> Здесь вы сможете погрузиться в искусственный
-                      интеллект, получить доступ к необходимым ресурсам и
-                      воплотить свои идеи в жизнь. <br />
-                      <br />
-                      Изучайте передовые технологии  и развивайте свои навыки с
-                      лабораторией InnoDataHub.
-                    </Trans>
-                  </Text>
-                </Stack>
-                <Button
-                  className={styles.StartButton}
-                  variant="default"
-                  radius="md"
-                >
-                  {t("goToPreviewCourse")}
-                </Button>
+        <Group px="56" align="stretch">
+          <Paper withBorder className={styles.IDHDescription}>
+            <Stack justify="space-between" h="100%">
+              <Stack justify="center" h="100%">
+                <Text fz="1.5rem" lh={1.5} span ff="IBM Plex Sans">
+                  <Trans
+                    t={t}
+                    i18nKey="description"
+                    components={{
+                      nl: (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      ),
+                    }}
+                  >
+                    Добро пожаловать в лабораторию InnoDataHub. <br />
+                    <br /> Здесь вы сможете погрузиться в искусственный
+                    интеллект, получить доступ к необходимым ресурсам и
+                    воплотить свои идеи в жизнь. <br />
+                    <br />
+                    Изучайте передовые технологии  и развивайте свои навыки с
+                    лабораторией InnoDataHub.
+                  </Trans>
+                </Text>
               </Stack>
-            </Paper>
-          </Stack>
+              <Button
+                className={styles.StartButton}
+                variant="default"
+                radius="md"
+              >
+                {t("goToPreviewCourse")}
+              </Button>
+            </Stack>
+          </Paper>
 
           <div className={styles.ProjectsContainer}>
             {projects.map((project) => (
