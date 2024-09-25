@@ -17,14 +17,15 @@ function Layout() {
         collapsed: { mobile: !opened, desktop: !opened },
       }}
       footer={{ height: 0 }}
+      w="100%"
     >
-      <AppShell.Header w={"100dvw"}>
+      <AppShell.Header>
         <Header />
       </AppShell.Header>
       <AppShell.Navbar p="md">
         <Drawer />
       </AppShell.Navbar>
-      <AppShell.Main>
+      <AppShell.Main w={"100%"}>
         <Outlet />
       </AppShell.Main>
       {/* <DrawerOpener opened={opened} toggleOpened={toggle} /> */}

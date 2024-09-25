@@ -45,11 +45,11 @@ const Header = () => {
         InnoDataHub
       </Title>
 
-      <Group h={"100%"} visibleFrom="md" gap="xs">
+      <Group h={"100%"} gap="xs" visibleFrom="xl">
         <HeaderNavigation />
       </Group>
 
-      <Group gap="1rem" visibleFrom="xl">
+      <Group gap="1rem" visibleFrom="sm">
         <Menu width="target" trigger="hover">
           <Menu.Target>
             <Group className={classes.Dropdown} mr="0" miw="auto" gap="sm">

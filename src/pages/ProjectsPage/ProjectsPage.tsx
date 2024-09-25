@@ -11,6 +11,7 @@ import styles from "./ProjectsPage.module.css";
 
 export function ProjectsPage() {
   const { t } = useTranslation();
+
   return (
     <>
       <Stack
@@ -64,9 +65,19 @@ export function ProjectsPage() {
           </Paper>
 
           <div className={styles.ProjectsContainer}>
-            {projects.map((project) => (
+            {/* {projects.map((project) => (
               <ProjectCard key={project.name} {...project} />
-            ))}
+            ))} */}
+            <Group gap="1rem" visibleFrom="sm" wrap="nowrap">
+              {projects.slice(0, 2).map((project) => (
+                <ProjectCard key={project.name} {...project} />
+              ))}
+            </Group>
+            <Group gap="1rem" visibleFrom="sm" wrap="nowrap">
+              {projects.slice(2, 4).map((project) => (
+                <ProjectCard key={project.name} {...project} />
+              ))}
+            </Group>
           </div>
         </Group>
 

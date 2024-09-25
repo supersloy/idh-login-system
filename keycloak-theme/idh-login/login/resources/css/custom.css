@@ -107,3 +107,8 @@ input:focus {
 .form-control {
   border-radius: 0.5rem;
 }
+
+h1#kc-page-title {
+  font-size: 32px;
+  font-weight: 500;
+}
