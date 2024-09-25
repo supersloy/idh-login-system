@@ -15,9 +15,15 @@ services:
       KC_DB_PASSWORD: password
       KC_DB_USERNAME: user_name
       KC_DB_SCHEMA: public
+      # Ports
+      # KEYCLOAK_HTTP_PORT: 8080
+      # KEYCLOAK_HTTPS_PORT: 8443
       # Admin
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      # Certs
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt.pem
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key.pem
     ports:
       - "41000:8080"
     depends_on:

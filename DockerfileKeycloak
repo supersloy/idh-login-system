@@ -1,3 +1,4 @@
 FROM quay.io/keycloak/keycloak:latest
 
 COPY ./keycloak-theme/idh-login/ /opt/keycloak/themes/idh-login/
+COPY ./certs/* /opt/keycloak/conf
