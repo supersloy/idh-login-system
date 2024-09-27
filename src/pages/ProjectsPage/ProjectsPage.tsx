@@ -58,6 +58,8 @@ export function ProjectsPage() {
                 className={styles.StartButton}
                 variant="default"
                 radius="md"
+                component="a"
+                href={import.meta.env.VITE_PREVIEW_COURSE_LINK}
               >
                 {t("goToPreviewCourse")}
               </Button>
