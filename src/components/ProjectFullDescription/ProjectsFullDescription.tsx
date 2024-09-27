@@ -41,7 +41,7 @@ function ProjectLine({
         component="a"
         w={300}
         h={35}
-        onClick={onClick}
+        onClick={disabledReason ? () => {} : onClick}
         radius={10}
         fz={16}
         disabled={!!disabledReason}
