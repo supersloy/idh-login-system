@@ -44,7 +44,7 @@ export function ProjectCard({ name }: ProjectCardProps) {
           <Button
             className={classes.VisitButton}
             onClick={goToProject}
-            disabled={name === "GPTeacher"}
+            disabled={name !== "booking"}
           >
             {t("goToProject")}
           </Button>

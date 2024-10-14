@@ -50,7 +50,7 @@ function ProjectLine({
       </Button>
       {disabledReason && (
         <Text c="dimmed" fz={20}>
-          {t(disabledReason)}
+          {/* {t(disabledReason)} */}
         </Text>
       )}
       {/* </Group> */}
@@ -109,7 +109,7 @@ export function ProjectFullDescriptions() {
           {...project}
           rtl={index % 2 === 1}
           onGoToProject={() => goToProject(project.link)}
-          disabledReason={project.name == "GPTeacher" ? "coming" : undefined}
+          disabledReason={project.name !== "booking" ? "coming" : undefined}
         >
           <Trans
             t={t}
@@ -120,9 +120,7 @@ export function ProjectFullDescriptions() {
               li: <li />,
               s: <strong />,
             }}
-          >
-            Loading...
-          </Trans>
+          ></Trans>
         </ProjectLine>
       ))}
       <RequireAuthModal open={authModalOpen} setOpen={setAuthModalOpen} />
