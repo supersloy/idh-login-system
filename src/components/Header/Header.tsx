@@ -20,7 +20,7 @@ const Header = () => {
   const nav = useNavigate();
 
   return (
-    <Group h="100%" w="100%" p="0" justify="space-between" align="center">
+    <Group h="100%" w="100%" px="96px" justify="space-between" align="center">
       {/* <Group ml="28px" gap="1rem">
         <div className={classes.Logos}>
           <a style={{ display: "flex" }} href="https://unionepro.ru/">
@@ -35,7 +35,6 @@ const Header = () => {
         </div>
       </Group> */}
       <Title
-        ml={56}
         onClick={() => {
           nav("/");
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,9 +44,9 @@ const Header = () => {
         InnoDataHub
       </Title>
 
-      <Group h={"100%"} gap="xs" visibleFrom="xl">
+      {/* <Group h={"100%"} gap="xs" visibleFrom="xl">
         <HeaderNavigation />
-      </Group>
+      </Group> */}
 
       <Group gap="1rem" visibleFrom="sm">
         <Menu width="target" trigger="hover">
@@ -66,7 +65,7 @@ const Header = () => {
             </Menu.Item>
           </Menu.Dropdown>
         </Menu>
-        <HeaderUser />
+        {/* <HeaderUser /> */}
       </Group>
     </Group>
   );

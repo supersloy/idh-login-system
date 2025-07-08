@@ -1,4 +1,13 @@
-import { Button, Flex, Group, Image, Stack, Text } from "@mantine/core";
+import {
+  Box,
+  Button,
+  Flex,
+  Group,
+  Image,
+  Paper,
+  Stack,
+  Text,
+} from "@mantine/core";
 import { useContext, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -36,7 +45,6 @@ function ProjectLine({
   const productDescription = (
     <Stack flex={1} align="flex-start">
       {children}
-      {/* <Group w="100%" justify={rtl ? "flex-start" : "flex-end"}> */}
       <Button
         component="a"
         w={300}
@@ -53,21 +61,7 @@ function ProjectLine({
           {/* {t(disabledReason)} */}
         </Text>
       )}
-      {/* </Group> */}
     </Stack>
-  );
-
-  const imageComponent = (
-    <Image
-      radius="30px"
-      flex={1}
-      w="40%"
-      src={image}
-      style={{
-        // border: "1px solid #B2C8FF",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-      }}
-    />
   );
 
   return (
@@ -83,7 +77,9 @@ function ProjectLine({
         direction={rtl ? "row-reverse" : "row"}
       >
         {productDescription}
-        {imageComponent}
+        <Paper radius="lg" flex={1} w="40%" shadow="sm" withBorder>
+          <Image src={image} radius="lg" />
+        </Paper>
       </Flex>
     </Stack>
   );
@@ -100,10 +96,11 @@ export function ProjectFullDescriptions() {
     }
     window.open(link, "_self");
   };
+  const currentProjects = projects.slice(2, 3);
 
   return (
-    <Stack gap={50}>
-      {projects.map((project, index) => (
+    <Stack gap={64}>
+      {currentProjects.map((project, index) => (
         <ProjectLine
           key={project.name}
           {...project}
@@ -115,7 +112,7 @@ export function ProjectFullDescriptions() {
             t={t}
             i18nKey={`projects.${project.name}.longDescription`}
             components={{
-              p: <Text size="22px" lh={1.5} fw={400} />,
+              p: <Text size="20px" lh={1.5} fw={400} />,
               ul: <ul />,
               li: <li />,
               s: <strong />,
