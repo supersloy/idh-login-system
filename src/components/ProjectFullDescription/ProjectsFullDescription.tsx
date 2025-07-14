@@ -1,18 +1,8 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Group,
-  Image,
-  Paper,
-  Stack,
-  Text,
-} from "@mantine/core";
-import { useContext, useState } from "react";
+import { Button, Flex, Group, Image, Paper, Stack, Text } from "@mantine/core";
+import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { projects } from "@/projects";
-import { KeyCloakContext } from "@components/KeyCloakProvider";
 import RequireAuthModal from "@components/RequireAuthModal/RequireAuthModal";
 
 import styles from "./ProjectsFullDescription.module.css";
@@ -88,12 +78,12 @@ function ProjectLine({
 export function ProjectFullDescriptions() {
   const { t } = useTranslation();
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const keycloak = useContext(KeyCloakContext);
+  // const keycloak = useContext(KeyCloakContext);
   const goToProject = (link: string) => {
-    if (!keycloak.authenticated) {
-      setAuthModalOpen(true);
-      return;
-    }
+    // if (!keycloak.authenticated) {
+    // setAuthModalOpen(true);
+    // return;
+    // }
     window.open(link, "_self");
   };
   const currentProjects = projects.slice(2, 3);

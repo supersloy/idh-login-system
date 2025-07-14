@@ -2,7 +2,6 @@ import { AppShell } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 
-import { Drawer } from "@components/Drawer/Drawer";
 import { Header } from "@components/Header";
 
 function Layout() {
@@ -22,9 +21,9 @@ function Layout() {
       <AppShell.Header>
         <Header />
       </AppShell.Header>
-      <AppShell.Navbar p="md">
+      {/* <AppShell.Navbar p="md">
         <Drawer />
-      </AppShell.Navbar>
+      </AppShell.Navbar> */}
       <AppShell.Main w={"100%"}>
         <Outlet />
       </AppShell.Main>

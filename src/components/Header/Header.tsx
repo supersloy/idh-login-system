@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 import Russia from "./svgs/Russia.svg";
 import UK from "./svgs/UK.svg";
-import { HeaderNavigation } from "./HeaderNavigation";
-import HeaderUser from "./HeaderUser";
 
 import classes from "./Header.module.css";
 

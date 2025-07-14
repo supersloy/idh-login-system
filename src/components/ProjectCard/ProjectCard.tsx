@@ -1,10 +1,9 @@
 import { Box, Button, Paper, Stack } from "@mantine/core";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ProjectInfo, projects } from "@/projects";
 import { scrollToTarget } from "@/utils/scrollToTarget";
-import { KeyCloakContext } from "@components/KeyCloakProvider";
 
 import RequireAuthModal from "../RequireAuthModal/RequireAuthModal";
 
@@ -15,7 +14,7 @@ const IGNORE_KEYCLOAK = true;
 
 export function ProjectCard({ name }: ProjectCardProps) {
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const keycloak = useContext(KeyCloakContext);
+  // const keycloak = useContext(KeyCloakContext);
   const { t } = useTranslation();
   // const nav = useNavigate();
 
@@ -24,7 +23,7 @@ export function ProjectCard({ name }: ProjectCardProps) {
   };
 
   const goToProject = () => {
-    if (!keycloak.authenticated && !IGNORE_KEYCLOAK) {
+    if (!IGNORE_KEYCLOAK) {
       setAuthModalOpen(true);
       return;
     }
